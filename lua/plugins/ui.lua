@@ -62,7 +62,7 @@ return {
           statusline = false,
         },
         config = {
-          -- header = vim.split(logo, "\n"),
+          header = vim.split(logo, "\n"),
           week_header = { enable = true },
           -- stylua: ignore
           center = {
