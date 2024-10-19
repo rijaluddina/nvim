@@ -3,10 +3,13 @@ return {
   -- tokyonight
   {
     "folke/tokyonight.nvim",
-  },
-
-  -- catppuccin
-  {
-    "catppuccin/nvim",
+    lazy = true,
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
   },
 }

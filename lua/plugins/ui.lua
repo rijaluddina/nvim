@@ -1,60 +1,21 @@
 return {
-  -- Better `vim.notify()`
-  {
-    "rcarriga/nvim-notify",
-  },
-
-  -- This is what powers LazyVim's fancy-looking
-  -- tabs, which include filetype icons and close buttons.
-  {
-    "akinsho/bufferline.nvim",
-  },
-
-  -- statusline
-  {
-    "nvim-lualine/lualine.nvim",
-  },
-
-  -- indent guides for Neovim
-  {
-    "lukas-reineke/indent-blankline.nvim",
-  },
-
-  -- Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
-  {
-    "folke/noice.nvim",
-  },
-
-  -- icons
-  {
-    "echasnovski/mini.icons",
-  },
-
-  -- ui components
-  {
-    "MunifTanjim/nui.nvim",
-  },
-
+  --- dashboard
   {
     "nvimdev/dashboard-nvim",
     lazy = false, -- As https://github.com/nvimdev/dashboard-nvim/pull/450, dashboard-nvim shouldn't be lazy-loaded to properly handle stdin.
-    opts = function()
+    opts = function(_, opts)
       local logo = [[
-           /\__\         /\  \         /\  \         /\__\          ___        /\__\     
-          /::|  |       /::\  \       /::\  \       /:/  /         /\  \      /::|  |    
-         /:|:|  |      /:/\:\  \     /:/\:\  \     /:/  /          \:\  \    /:|:|  |    
-        /:/|:|  |__   /::\~\:\  \   /:/  \:\  \   /:/__/  ___      /::\__\  /:/|:|__|__  
-       /:/ |:| /\__\ /:/\:\ \:\__\ /:/__/ \:\__\  |:|  | /\__\  __/:/\/__/ /:/ |::::\__\ 
-       \/__|:|/:/  / \:\~\:\ \/__/ \:\  \ /:/  /  |:|  |/:/  / /\/:/  /    \/__/~~/:/  / 
-           |:/:/  /   \:\ \:\__\    \:\  /:/  /   |:|__/:/  /  \::/__/           /:/  /  
-           |::/  /     \:\ \/__/     \:\/:/  /     \::::/__/    \:\__\          /:/  /   
-           /:/  /       \:\__\        \::/  /       ~~~~         \/__/         /:/  /    
-           \/__/         \/__/         \/__/                                   \/__/     
+           ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
+           ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z    
+           ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z       
+           ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z         
+           ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║           
+           ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝           
       ]]
 
       logo = string.rep("\n", 8) .. logo .. "\n\n"
 
-      local opts = {
+      opts = {
         theme = "doom",
         hide = {
           -- this is taken care of by lualine
@@ -62,7 +23,7 @@ return {
           statusline = false,
         },
         config = {
-          header = vim.split(logo, "\n"),
+          -- header = vim.split(logo, "\n"),
           week_header = { enable = true },
           -- stylua: ignore
           center = {

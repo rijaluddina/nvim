@@ -1,5 +1,1 @@
-return {
-  {
-    "mfussenegger/nvim-lint",
-  },
-}
+return {}
