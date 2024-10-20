@@ -5,12 +5,15 @@ return {
     lazy = false, -- As https://github.com/nvimdev/dashboard-nvim/pull/450, dashboard-nvim shouldn't be lazy-loaded to properly handle stdin.
     opts = function(_, opts)
       local logo = [[
-           ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
-           ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z    
-           ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z       
-           ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z         
-           ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║           
-           ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝           
+        _____  ___    _______    ______  ___      ___  __     ___      ____         
+        (\"   \|"  \  /"     "|  /    " \|"  \    /"  ||" \   |"  \    /"  |        
+        |.\\   \    |(: ______) // ____  \\   \  //  / ||  |  |\   \  //   |        
+        |: \.   \\  | \/    |  /  /    ) :)\\  \/. ./  |:  |  | \\  \/.    |        
+        |.  \    \. | // ___)_(: (____/ //  \.    //   |.  |  |: \.        |        
+        |    \    \ |(:      "|\        /    \\   /    /\  |\ |.  \    /:  |        
+         \___|\____\) \_______) \"_____/      \__/    (__\_|_)|___|\__/|___|        
+
+        rijaluddina        
       ]]
 
       logo = string.rep("\n", 8) .. logo .. "\n\n"
@@ -23,8 +26,8 @@ return {
           statusline = false,
         },
         config = {
-          -- header = vim.split(logo, "\n"),
-          week_header = { enable = true },
+          header = vim.split(logo, "\n"),
+          --- week_header = { enable = true },
           -- stylua: ignore
           center = {
             { action = 'lua LazyVim.pick()()',                           desc = " Find File",       icon = " ", key = "f" },

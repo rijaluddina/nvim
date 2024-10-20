@@ -13,6 +13,7 @@ return {
         lsp_format = "fallback", -- not recommended to change
       },
       formatters_by_ft = {
+        blade = { "blade-formatter" },
         lua = { "stylua" },
         python = { "black" },
         css = { "prettier" },
