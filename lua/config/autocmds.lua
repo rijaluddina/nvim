@@ -4,21 +4,16 @@
 --- filetype ---
 vim.filetype.add({
   extension = {
-    conf = "conf",
-    env = "dotenv",
     blade = "blade",
-    tiltfile = "tiltfile",
-    Tiltfile = "tiltfile",
   },
   filename = {
-    [".env"] = "dotenv",
     ["tsconfig.json"] = "json",
     [".yamlfmt"] = "yaml",
     ["composer.lock"] = "json",
     ["artisan"] = "blade",
   },
   pattern = {
-    ["%.env%.[%w_.-]+"] = "dotenv",
+    ["%.env%.[%w_.-]+"] = "sh",
     [".*%.blade%.php"] = "blade",
   },
 })
