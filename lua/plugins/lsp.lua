@@ -78,6 +78,8 @@ return {
         "black",
         "prettier",
         "blade-formatter",
+        "ast-grep",
+        "pyright",
         "json-lsp",
         "markdown-toc",
         "markdownlint-cli2",
