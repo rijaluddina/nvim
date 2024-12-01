@@ -35,6 +35,7 @@ return {
         typescriptreact = { "prettier" },
         vue = { "prettier" },
         yaml = { "prettier" },
+        rust = { "rustfmt" },
       },
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {

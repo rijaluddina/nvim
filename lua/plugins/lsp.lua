@@ -59,6 +59,8 @@ return {
       },
     },
   },
+
+  -- mason
   {
     "williamboman/mason.nvim",
     opts = {
@@ -84,7 +86,10 @@ return {
         "markdown-toc",
         "markdownlint-cli2",
         "vue-language-server",
+        "rust-analyzer",
         "vtsls",
+        "rustfmt",
+        "cpptools",
       },
     },
   },
