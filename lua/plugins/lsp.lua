@@ -83,6 +83,7 @@ return {
         "ast-grep",
         "pyright",
         "json-lsp",
+        "nixpkgs-fmt",
         "markdown-toc",
         "markdownlint-cli2",
         "vue-language-server",

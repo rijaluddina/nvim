@@ -30,13 +30,12 @@ return {
     version = false, -- set this if you want to always pull the latest change
     opts = {
       provider = "groq",
-      auto_suggestions_provider = "groq",
       vendors = {
         groq = {
           __inherited_from = "openai",
           api_key_name = "GROQ_NVIM_API_KEY",
           endpoint = "https://api.groq.com/openai/v1/",
-          model = "llama-3.2-90b-vision-preview", --llama-3.3-70b-versatile
+          model = "llama-3.3-70b-versatile", --llama-3.2-90b-vision-preview
         },
       },
       behaviour = {

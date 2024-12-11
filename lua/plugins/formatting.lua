@@ -36,6 +36,7 @@ return {
         vue = { "prettier" },
         yaml = { "prettier" },
         rust = { "rustfmt" },
+        nix = { "nixpkgs-fmt" },
       },
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {
