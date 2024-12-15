@@ -7,7 +7,8 @@ return {
       { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
     },
     opts = function(_, opts)
-      -- original LazyVim kind icon formatter
+      table.insert(opts.auto_brackets, "python")
+      table.insert(opts.sources, { name = "emoji" })
       local format_kinds = opts.formatting.format
       opts.formatting.format = function(entry, item)
         format_kinds(entry, item) -- add icons
@@ -35,7 +36,7 @@ return {
           __inherited_from = "openai",
           api_key_name = "GROQ_NVIM_API_KEY",
           endpoint = "https://api.groq.com/openai/v1/",
-          model = "llama-3.3-70b-versatile", --llama-3.2-90b-vision-preview
+          model = "llama-3.3-70b-versatile", ---llama-3.3-70b-specdec
         },
       },
       behaviour = {
@@ -56,8 +57,8 @@ return {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
-      "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+      "echasnovski/mini.icons",
+      "hrsh7th/nvim-cmp",
       "Exafunction/codeium.nvim",
       {
         -- support for image pasting

@@ -1,4 +1,6 @@
 return {
-  "NvChad/nvterm",
-  config = function() end,
+  {
+    "NvChad/nvterm",
+    config = function() end,
+  },
 }

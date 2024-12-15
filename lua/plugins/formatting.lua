@@ -15,7 +15,7 @@ return {
       formatters_by_ft = {
         blade = { "blade-formatter" },
         lua = { "stylua" },
-        python = { "black" },
+        python = { "ruff" },
         css = { "prettier" },
         graphql = { "prettier" },
         handlebars = { "prettier" },
