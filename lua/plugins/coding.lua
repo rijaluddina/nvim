@@ -59,7 +59,6 @@ return {
       --- The below dependencies are optional,
       "echasnovski/mini.icons",
       "hrsh7th/nvim-cmp",
-      "Exafunction/codeium.nvim",
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",
