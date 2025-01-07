@@ -74,6 +74,11 @@ return {
     "echasnovski/mini.icons",
     lazy = true,
     opts = {
+      extension = {
+        toml = { glyph = "", hl = "MiniIconsOrange" },
+        lock = { glyph = "", hl = "MiniIconsYellow" },
+        db = { glyph = "", hl = "MiniIconsYellow" },
+      },
       file = {
         [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
         ["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
@@ -82,6 +87,7 @@ return {
       },
       filetype = {
         dotenv = { glyph = "", hl = "MiniIconsYellow" },
+        sh = { glyph = "", hl = "MiniIconsYellow" },
       },
     },
     init = function()
