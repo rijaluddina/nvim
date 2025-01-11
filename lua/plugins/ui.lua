@@ -84,6 +84,7 @@ return {
         ["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
         [".env"] = { glyph = "", hl = "MiniIconsYellow" },
         [".env.example"] = { glyph = "", hl = "MiniIconsYellow" },
+        [".python-version"] = { glyph = "", hl = "MiniIconsYellow" },
       },
       filetype = {
         dotenv = { glyph = "", hl = "MiniIconsYellow" },
