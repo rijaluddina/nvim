@@ -25,29 +25,65 @@ return {
     },
   },
   {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        hide_during_completion = true,
+        debounce = 75,
+        keymap = {
+          accept = "<Tab>",
+          accept_word = false,
+          accept_line = false,
+          next = "<M-]>",
+          prev = "<M-[>",
+          dismiss = "<C-]>",
+        },
+      },
+      filetypes = {
+        sh = function()
+          if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), "^%.env.*") then
+            -- disable for .env files
+            return false
+          end
+          return true
+        end,
+      },
+    },
+  },
+  {
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
     version = false, -- set this if you want to always pull the latest change
     opts = {
-      provider = "groq",
+      provider = "copilot",
       vendors = {
         groq = {
           __inherited_from = "openai",
-          api_key_name = "GROQ_NVIM_API_KEY",
+          api_key_name = "GROQ_API_KEY",
           endpoint = "https://api.groq.com/openai/v1/",
-          model = "llama-3.3-70b-versatile", ---llama-3.3-70b-specdec
+          model = "llama-3.3-70b-versatile",
+          temperature = 0.75,
+          max_tokens = 4096,
         },
       },
+      gemini = {
+        endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+        model = "gemini-2.0-flash-exp",
+        timeout = 30000, -- Timeout in milliseconds
+        temperature = 0,
+        max_tokens = 4096,
+      },
       behaviour = {
-        auto_suggestions = false, -- Experimental stage
+        auto_suggestions = false,
         auto_set_highlight_group = true,
         auto_set_keymaps = true,
         auto_apply_diff_after_generation = false,
         support_paste_from_clipboard = true,
         minimize_diff = true,
       },
-      -- add any opts here
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make BUILD_FROM_SOURCE=false",
