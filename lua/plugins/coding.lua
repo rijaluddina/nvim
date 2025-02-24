@@ -60,6 +60,8 @@ return {
     version = false, -- set this if you want to always pull the latest change
     opts = {
       provider = "copilot",
+      cursor_applying_provider = "groq",
+      auto_suggestions_provider = "copilot",
       vendors = {
         groq = {
           __inherited_from = "openai",
@@ -68,28 +70,36 @@ return {
           model = "llama-3.3-70b-versatile",
           temperature = 0.75,
           max_tokens = 4096,
+          -- disable_tools = true, -- disable tools!
         },
       },
       gemini = {
         endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
-        model = "gemini-2.0-flash-exp",
+        model = "gemini-2.0-flash",
         timeout = 30000, -- Timeout in milliseconds
         temperature = 0,
         max_tokens = 4096,
+        -- disable_tools = true, -- disable tools!
+      },
+      web_search_engine = {
+        provider = "tavily", -- tavily, serpapi or google
       },
       behaviour = {
-        auto_suggestions = false,
+        auto_suggestions = true, -- Experimental stage
         auto_set_highlight_group = true,
         auto_set_keymaps = true,
         auto_apply_diff_after_generation = false,
         support_paste_from_clipboard = true,
-        minimize_diff = true,
+        minimize_diff = true, -- Whether to remove unchanged lines when applying a code block
+        enable_token_counting = true, -- Whether to enable token counting. Default to true.
+        enable_cursor_plannig_mode = true, -- Whether to enable cursor planning mode. Default to false.
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make BUILD_FROM_SOURCE=false",
     -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
     dependencies = {
+      "nvim-treesitter/nvim-treesitter",
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
