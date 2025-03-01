@@ -26,7 +26,7 @@ return {
   },
   {
     "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
+    event = "BufReadPost",
     opts = {
       suggestion = {
         enabled = true,
@@ -59,9 +59,9 @@ return {
     lazy = false,
     version = false, -- set this if you want to always pull the latest change
     opts = {
-      provider = "copilot",
+      provider = "gemini",
       cursor_applying_provider = "groq",
-      auto_suggestions_provider = "copilot",
+      -- auto_suggestions_provider = "copilot",
       vendors = {
         groq = {
           __inherited_from = "openai",
@@ -70,22 +70,25 @@ return {
           model = "llama-3.3-70b-versatile",
           temperature = 0.75,
           max_tokens = 4096,
-          -- disable_tools = true, -- disable tools!
+          -- disable_tools = false, -- disable tools!
         },
       },
       gemini = {
         endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
-        model = "gemini-2.0-flash",
+        model = "gemini-2.0-flash-thinking-exp",
         timeout = 30000, -- Timeout in milliseconds
         temperature = 0,
         max_tokens = 4096,
-        -- disable_tools = true, -- disable tools!
+        -- disable_tools = false, -- disable tools!
+      },
+      rag_service = {
+        enabled = false, -- Enables the rag service, requires OPENAI_API_KEY to be set
       },
       web_search_engine = {
         provider = "tavily", -- tavily, serpapi or google
       },
       behaviour = {
-        auto_suggestions = true, -- Experimental stage
+        auto_suggestions = false, -- Experimental stage
         auto_set_highlight_group = true,
         auto_set_keymaps = true,
         auto_apply_diff_after_generation = false,
